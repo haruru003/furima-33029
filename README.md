@@ -24,3 +24,87 @@ Things you may want to cover:
 * ...
 
 
+
+
+## users table
+| Column   | Type   | Options    |
+| -------- | ------ | ---------- |
+| username | string | null:false |
+| password | string | null:false |
+| email    | string | null:false |
+
+## association
+- has_many :items
+- has_many :trading_records
+- has_one :profiles
+- has_one :sending_destinations
+
+
+## profiles table
+| Column           | Type       | Option                       |
+| ---------------- | ---------- | ---------------------------- |
+| first_name       | string     | null:false                   |
+| last_name        | string     | null:false                   |
+| first_name_kana  | string     | null:false                   |
+| last_name_kana   | string     | null:false                   |
+| birth_year       | date       | null:false                   |
+| birth_month      | date       | null:false                   |
+| birth_day        | date       | null:false                   |
+| user             | references | null:false, foreign_key:true |
+
+## association
+- belongs_to :user
+
+
+## items table
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| item_img        | string     | null:false                    |
+| item_name       | string     | null:false                    |
+| introduction    | text       | null:false                    |
+| category        | references | null:false foreign_key: true  |
+| item_condition  | references | null:false, foreign_key: true |
+| postage_payer   | references | null:false, foreign_key: true |
+| prefecture_code | integer    | null:false, foreign_key: true |
+| preparation_day | references | null:false, foreign_key: true |
+| price           | integer    | null:false                    |
+| user            | references | null:false, foreign_key: true |
+
+## association
+- belongs_to:category
+- belongs_to_active_hash :item_condition
+- belongs_to_active_hash :category
+- belongs_to_active_hash :postage_payer
+- belongs_to_active_hash :preparation_day
+- belongs_to :user
+- has_one :trading_records
+
+
+## trading_records table
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| item   | references | null:false, foreign_key: true |
+| user   | references | null:false, foreign_key: true |
+
+ ## association
+- belongs_to :users
+- belongs_to ：items
+- has_one :sending_destination
+
+
+
+## sending_destinations table
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| post_code       | integer(7) | null:false                    |
+| prefecture_code | integer    | null:false                    |
+| city            | string     | null:false                    |
+| house_number    | string     | null:false                    |
+| building_name   | string     |                               |
+| phone_number    | integer    | null:false                    |
+| user            | references | null:false, foreign_key: true |
+ 
+ ## association
+- belongs_to :user
+- belongs_to :trading_records
+
