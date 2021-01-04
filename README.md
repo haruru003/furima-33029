@@ -49,11 +49,11 @@ Things you may want to cover:
 | ------------------ | ---------- | ----------------------------- |
 | item_name          | string     | null:false                    |
 | introduction       | text       | null:false                    |
-| category_id        | integer    | null:false foreign_key: true  |
-| item_condition_id  | integer    | null:false, foreign_key: true |
-| postage_payer_id   | integer    | null:false, foreign_key: true |
-| prefecture_code_id | integer    | null:false, foreign_key: true |
-| preparation_day_id | integer    | null:false, foreign_key: true |
+| category_id        | integer    | null:false                    |
+| item_condition_id  | integer    | null:false                    |
+| postage_payer_id   | integer    | null:false                    |
+| prefecture_code_id | integer    | null:false                    |
+| preparation_day_id | integer    | null:false                    |
 | price              | integer    | null:false                    |
 | user               | references | null:false, foreign_key: true |
 
@@ -63,7 +63,7 @@ Things you may want to cover:
 - belongs_to_active_hash :postage_payer
 - belongs_to_active_hash :preparation_day
 - belongs_to :user
-- has_one :trading_records
+- has_one :trading_record
 
 
 ## trading_records table
@@ -73,8 +73,8 @@ Things you may want to cover:
 | user   | references | null:false, foreign_key: true |
 
  ## association
-- belongs_to :users
-- belongs_to ：items
+- belongs_to :user
+- belongs_to ：item
 - has_one :sending_destination
 
 
@@ -87,7 +87,7 @@ Things you may want to cover:
 | city            | string     | null:false                    |
 | house_number    | string     | null:false                    |
 | building_name   | string     |                               |
-| phone_number    | integer    | null:false                    |
+| phone_number    | string     | null:false                    |
 | user            | references | null:false, foreign_key: true |
  
  ## association
