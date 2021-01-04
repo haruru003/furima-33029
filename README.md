@@ -62,6 +62,7 @@ Things you may want to cover:
 - belongs_to_active_hash :category
 - belongs_to_active_hash :postage_payer
 - belongs_to_active_hash :preparation_day
+- belongs_to_active_hash :prefecture_code
 - belongs_to :user
 - has_one :trading_record
 
@@ -80,16 +81,16 @@ Things you may want to cover:
 
 
 ## sending_destinations table
-| Column          | Type       | Options                       |
-| --------------- | ---------- | ----------------------------- |
-| post_code       | string(7)  | null:false                    |
-| prefecture_code | string     | null:false                    |
-| city            | string     | null:false                    |
-| house_number    | string     | null:false                    |
-| building_name   | string     |                               |
-| phone_number    | string     | null:false                    |
-| user            | references | null:false, foreign_key: true |
+| Column             | Type        | Options                       |
+| ------------------ | ----------- | ----------------------------- |
+| post_code          | string(7)   | null:false                    |
+| prefecture_code_id | integer     | null:false                    |
+| city               | string      | null:false                    |
+| house_number       | string      | null:false                    |
+| building_name      | string      |                               |
+| phone_number       | string      | null:false                    |
+| user               | references  | null:false, foreign_key: true |
  
  ## association
-- belongs_to :trading_records
+- belongs_to :trading_record
 
