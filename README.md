@@ -36,9 +36,7 @@ Things you may want to cover:
 | last_name          | string  | null:false |
 | first_name_kana    | string  | null:false |
 | last_name_kana     | string  | null:false |
-| birth_year         | integer | null:false |
-| birth_month        | integer | null:false |
-| birth_day          | integer | null:false |
+| birthday           | date    | null:false |
 
 ## association
 - has_many :items
@@ -60,7 +58,6 @@ Things you may want to cover:
 | user               | references | null:false, foreign_key: true |
 
 ## association
-- belongs_to:category
 - belongs_to_active_hash :item_condition
 - belongs_to_active_hash :category
 - belongs_to_active_hash :postage_payer
@@ -85,8 +82,8 @@ Things you may want to cover:
 ## sending_destinations table
 | Column          | Type       | Options                       |
 | --------------- | ---------- | ----------------------------- |
-| post_code       | integer(7) | null:false                    |
-| prefecture_code | integer    | null:false                    |
+| post_code       | string(7)  | null:false                    |
+| prefecture_code | string     | null:false                    |
 | city            | string     | null:false                    |
 | house_number    | string     | null:false                    |
 | building_name   | string     |                               |
