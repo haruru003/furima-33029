@@ -27,48 +27,37 @@ Things you may want to cover:
 
 
 ## users table
-| Column   | Type   | Options    |
-| -------- | ------ | ---------- |
-| username | string | null:false |
-| password | string | null:false |
-| email    | string | null:false |
+| Column             | Type    | Options    |
+| ------------------ | ------- | ---------- |
+| username           | string  | null:false |
+| encrypted_password | string  | null:false |
+| email              | string  | null:false |
+| first_name         | string  | null:false |
+| last_name          | string  | null:false |
+| first_name_kana    | string  | null:false |
+| last_name_kana     | string  | null:false |
+| birth_year         | integer | null:false |
+| birth_month        | integer | null:false |
+| birth_day          | integer | null:false |
 
 ## association
 - has_many :items
 - has_many :trading_records
-- has_one :profiles
-- has_one :sending_destinations
 
-
-## profiles table
-| Column           | Type       | Option                       |
-| ---------------- | ---------- | ---------------------------- |
-| first_name       | string     | null:false                   |
-| last_name        | string     | null:false                   |
-| first_name_kana  | string     | null:false                   |
-| last_name_kana   | string     | null:false                   |
-| birth_year       | date       | null:false                   |
-| birth_month      | date       | null:false                   |
-| birth_day        | date       | null:false                   |
-| user             | references | null:false, foreign_key:true |
-
-## association
-- belongs_to :user
 
 
 ## items table
-| Column          | Type       | Options                       |
-| --------------- | ---------- | ----------------------------- |
-| item_img        | string     | null:false                    |
-| item_name       | string     | null:false                    |
-| introduction    | text       | null:false                    |
-| category        | references | null:false foreign_key: true  |
-| item_condition  | references | null:false, foreign_key: true |
-| postage_payer   | references | null:false, foreign_key: true |
-| prefecture_code | integer    | null:false, foreign_key: true |
-| preparation_day | references | null:false, foreign_key: true |
-| price           | integer    | null:false                    |
-| user            | references | null:false, foreign_key: true |
+| Column             | Type       | Options                       |
+| ------------------ | ---------- | ----------------------------- |
+| item_name          | string     | null:false                    |
+| introduction       | text       | null:false                    |
+| category_id        | integer    | null:false foreign_key: true  |
+| item_condition_id  | integer    | null:false, foreign_key: true |
+| postage_payer_id   | integer    | null:false, foreign_key: true |
+| prefecture_code_id | integer    | null:false, foreign_key: true |
+| preparation_day_id | integer    | null:false, foreign_key: true |
+| price              | integer    | null:false                    |
+| user               | references | null:false, foreign_key: true |
 
 ## association
 - belongs_to:category
