@@ -91,6 +91,5 @@ Things you may want to cover:
 | user            | references | null:false, foreign_key: true |
  
  ## association
-- belongs_to :user
 - belongs_to :trading_records
 
