@@ -16,6 +16,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
 
   # config.secret_key = '158a84c34968d812d2c7e0afb5cdfe336bc84efe9a0a4c694d028176e92f63e4eeda66f9bfd2b6fbe4a53daa2bfb2ecd586e3416c1af3421b98ad8655fa86476'
+
   # config.secret_key = '11db2f79f0e7ab6caf9011aaf0614593b78210cde7ed0ca39cdc1b2bee3af4f3a82087c4f9c1d25d0ebd4dedfb5c526601523d2b90025503e667cf81f975eeb1'
 
 
@@ -129,11 +130,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-<<<<<<< Updated upstream
+
   # config.pepper = '51ccee1c423908b19e543a48299527f97a0c05bf6c4405e51aa957be3fb28ad23f0cae60c464c7ad2805b9bb1709b4540c6dd5c7890b57eeebe97d5bed8eb607'
-=======
+
   # config.pepper = 'c10e15ceaafa506ba721c64928374a874d3f599d7e0d15eaf68e3c1ed2ca155814a505857083cfc3a175d014b1207de176785558b5081115dcd034fe91f9d3c9'
->>>>>>> Stashed changes
+
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
