@@ -89,7 +89,7 @@ Things you may want to cover:
 | house_number       | string      | null:false                    |
 | building_name      | string      |                               |
 | phone_number       | string      | null:false                    |
-| user               | references  | null:false, foreign_key: true |
+| trading_record     | references  | null:false, foreign_key: true |
  
  ## association
 - belongs_to :trading_record
