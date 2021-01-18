@@ -17,7 +17,5 @@ class OrderAdress
     # 各テーブルにデータを保存する処理を書く
     order = TradingRecord.create(item_id: item_id, user_id: user_id)
     adress = Adress.create(post_code: post_code, prefecture_code_id: prefecture_code_id, city: city, house_number: house_number, building_name: building_name, trading_record_id: order.id)
-    adress.valid?
-    binding.pry
   end
 end
