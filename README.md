@@ -80,7 +80,7 @@ Things you may want to cover:
 
 
 
-## sending_destinations table
+## address table
 | Column             | Type        | Options                       |
 | ------------------ | ----------- | ----------------------------- |
 | post_code          | string(7)   | null:false                    |
