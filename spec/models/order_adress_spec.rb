@@ -52,7 +52,11 @@ RSpec.describe OrderAdress, type: :model do
         @order_adress.valid?
         expect(@order_adress.errors.full_messages).to include("Phone number is invalid")
       end
-      it ""
+      it "電話番号はハイフンなしでないと購入できない" do
+        @order_adress.phone_number = '111-1111-1111'
+        @order_adress.valid?
+        expect(@order_adress.errors.full_messages).to include("Phone number is invalid")
+      end
     end
   end
 end
