@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create, :pay_item, :move_to_index]
 
   def index
-   
     @order_adress = OrderAdress.new
   end
 
@@ -28,11 +27,11 @@ class OrdersController < ApplicationController
 
   def pay_item
   
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # 自身のPAY.JPテスト秘密鍵を記述しましょう
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
-      amount: @item.price,  # 商品の値段
-      card: order_params[:token],    # カードトークン
-      currency: 'jpy'                 # 通貨の種類（日本円）
+      amount: @item.price,  
+      card: order_params[:token],    
+      currency: 'jpy'                 
     )
   end
 
