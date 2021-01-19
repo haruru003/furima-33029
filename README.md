@@ -94,3 +94,4 @@ Things you may want to cover:
  ## association
 - belongs_to :trading_record
 
+
